@@ -1,0 +1,2 @@
+export const SUPABASE_URL="https://xoqiofyabizpyireodik.supabase.co";
+export const SUPABASE_ANON_KEY="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhvcWlvZnlhYml6cHlpcmVvZGlrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTA2MjA5MzMsImV4cCI6MjEwNjE5NjkzM30.RS2BhKCRpz4byLjdl38isKdGWD_Iw3JDFMPi8yKog58";

@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Login — OKBOS</title>
+    
+    <!-- Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,0,0" rel="stylesheet">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/login.css">
+    
+    <style>
+        body.login-body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .login-card {
+            background: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(149, 157, 165, 0.15);
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .brand {
+            margin-bottom: 24px;
+        }
+
+        .brand-logo {
+            display: block;
+            width: 150px;
+            max-width: 100%;
+            height: auto;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: #2b2b2b;
+            margin: 0 0 8px 0;
+        }
+
+        p.muted {
+            color: #6c757d;
+            font-size: 14px;
+            margin: 0 0 32px 0;
+        }
+
+        form label {
+            display: block;
+            text-align: left;
+            font-size: 14px;
+            font-weight: 500;
+            color: #495057;
+            margin-bottom: 16px;
+        }
+
+        form input[type="email"],
+        form input[type="password"],
+        form input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            margin-top: 8px;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease;
+        }
+
+        /* Modifikasi untuk Input Password + Icon */
+        .password-wrapper {
+            position: relative;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .password-wrapper input {
+            padding-right: 44px; /* Memberi ruang agar teks tidak tertutup icon */
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-top: 4px; /* Menyesuaikan margin top dari input */
+            background: none;
+            border: none;
+            color: #adb5bd;
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .toggle-password:hover {
+            color: #495057;
+        }
+
+        form input[type="email"]:focus,
+        .password-wrapper input:focus {
+            border-color: #0d6efd;
+            outline: none;
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 24px;
+        }
+
+        .check {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #495057;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .link-button {
+            background: none;
+            border: none;
+            color: #0d6efd;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0;
+        }
+
+        .link-button:hover {
+            text-decoration: underline;
+        }
+
+        .primary-button.full {
+            width: 100%;
+            padding: 14px;
+            background-color: #0d6efd;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .primary-button.full:hover {
+            background-color: #0b5ed7;
+        }
+
+        footer {
+            margin-top: 32px;
+            font-size: 12px;
+            color: #adb5bd;
+        }
+    </style>
+</head>
+<body class="login-body">
+    <main class="login-page">
+        <section class="login-card">
+            
+            <div class="brand">
+                <img src="./assets/logo.svg" alt="OKBOS" class="brand-logo">
+            </div>
+
+            <h1>Selamat Datang</h1>
+            <p class="muted">Masuk ke akun OKBOS untuk mengelola operasional.</p>
+            
+            <form id="loginForm">
+                <label>
+                    Email
+                    <input id="email" type="email" required>
+                </label>
+                
+                <label>
+                    Password
+                    <div class="password-wrapper">
+                        <input id="password" type="password" required>
+                        <button type="button" id="togglePassword" class="toggle-password" title="Lihat password">
+                            <span class="material-symbols-rounded">visibility_off</span>
+                        </button>
+                    </div>
+                </label>
+                
+                <div class="login-options">
+                    <label class="check">
+                        <input id="remember" type="checkbox"> Ingat saya
+                    </label>
+                    <button id="forgotPassword" class="link-button" type="button">Lupa password?</button>
+                </div>
+                
+                <button class="primary-button full">Masuk</button>
+                <div id="loginMessage" class="message"></div>
+            </form>
+            
+            <footer>OKBOS V1 • Mini ATM Agent</footer>
+        </section>
+    </main>
+
+    <!-- Supabase & Auth Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script type="module" src="./js/auth.js"></script>
+
+    <!-- Script untuk Toggle Password -->
+    <script>
+        const togglePasswordBtn = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        togglePasswordBtn.addEventListener('click', function () {
+            // Cek tipe input saat ini
+            const isPassword = passwordInput.getAttribute('type') === 'password';
+            
+            // Ubah tipe input
+            passwordInput.setAttribute('type', isPassword ? 'text' : 'password');
+            
+            // Ubah icon
+            this.innerHTML = isPassword 
+                ? '<span class="material-symbols-rounded">visibility</span>' 
+                : '<span class="material-symbols-rounded">visibility_off</span>';
+        });
+    </script>
+</body>
+</html>

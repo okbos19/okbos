@@ -1,0 +1,1 @@
+import{initNav}from"./app.js";import{supabase}from"./supabase.js";await initNav("home");const{data:{user}}=await supabase.auth.getUser();if(user)welcomeText.textContent=user.email||"Pengguna";

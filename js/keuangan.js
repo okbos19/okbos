@@ -1,0 +1,1 @@
+import{initNav}from"../js/app.js";await initNav("keuangan");

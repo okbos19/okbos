@@ -1,0 +1,661 @@
+/* =========================================================
+   OKBOS DASHBOARD - MODERN UI (SLIDER CARDS)
+   ========================================================= */
+
+:root {
+  --ok-blue: #3291ff;
+  --page: #f2f7fd;
+  --text: #1a2233;
+  --line: #eef2f6;
+
+  /* UI Baru Colors */
+  --purple: #b08dff;
+  --orange: #ffb82e;
+  --blue-grad: #4bb3ff;
+  --cyan: #38c8ff;
+
+  --shadow: 0 8px 25px rgba(36, 94, 155, 0.05);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+  background: var(--page);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--page);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+/*
+   Penting:
+   style.css memiliki .app-shell dengan padding atas.
+   Dashboard harus menghapus padding tersebut agar
+   background/header benar-benar mulai dari paling atas.
+*/
+.app-shell.dashboard-shell {
+  width: min(100%, 760px);
+  max-width: 760px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 0 100px 0 !important;
+}
+
+
+/* =========================================================
+   TOP BACKGROUND
+   ========================================================= */
+
+.top-bg-wrapper {
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(
+    180deg,
+    #4da3ff 0%,
+    #308ff8 100%
+  );
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+  padding: 0 0 40px 0;
+  color: #fff;
+  box-shadow: 0 15px 30px rgba(48, 143, 248, 0.15);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 20px 20px;
+}
+
+.welcome-title {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2px;
+}
+
+#welcomeText {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-button,
+.avatar-button {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+}
+
+.header-button .material-symbols-rounded,
+.avatar-button .material-symbols-rounded {
+  font-size: 23px;
+}
+
+.notification-button {
+  position: relative;
+}
+
+.notification-button i {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 8px;
+  height: 8px;
+  background: #ff5252;
+  border-radius: 50%;
+  border: 2px solid #308ff8;
+}
+
+
+/* =========================================================
+   BALANCE SLIDER
+   ========================================================= */
+
+.balance-slider-section {
+  margin-top: 10px;
+  width: 100%;
+}
+
+.balance-scroll-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0 20px 20px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.balance-scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.balance-card {
+  flex: 0 0 88%;
+  scroll-snap-align: center;
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255,255,255,0.15) 0%,
+      rgba(255,255,255,0.05) 100%
+    );
+
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.2);
+
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.05);
+}
+
+.balance-decoration {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: rgba(255,255,255,0.1);
+}
+
+.balance-decoration-one {
+  width: 250px;
+  height: 250px;
+  right: -80px;
+  top: -100px;
+}
+
+.balance-decoration-two {
+  width: 150px;
+  height: 150px;
+  left: -50px;
+  bottom: -50px;
+}
+
+.balance-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.balance-top .material-symbols-rounded {
+  font-size: 22px;
+}
+
+.balance-label {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.8);
+}
+
+.balance-card strong {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin-top: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.balance-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.badge-growth {
+  display: inline-flex;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 8px;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+
+/* =========================================================
+   SECTIONS
+   ========================================================= */
+
+.section {
+  padding: 0 20px;
+  margin-top: 28px;
+}
+
+.section-label {
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #9aa5b6;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.section-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 17px;
+  color: #1c2536;
+}
+
+.section-title a {
+  color: var(--ok-blue);
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   AKSES CEPAT
+   ========================================================= */
+
+.quick-scroll {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.quick-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.quick-card {
+  flex: 0 0 125px;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border-radius: 20px;
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.06);
+}
+
+.bg-purple {
+  background: linear-gradient(
+    135deg,
+    #b898ff,
+    #9f76ff
+  );
+}
+
+.bg-orange {
+  background: linear-gradient(
+    135deg,
+    #ffc752,
+    #ffa715
+  );
+}
+
+.bg-blue {
+  background: linear-gradient(
+    135deg,
+    #62beff,
+    #389dff
+  );
+}
+
+.bg-cyan {
+  background: linear-gradient(
+    135deg,
+    #5ce1e6,
+    #38c8ff
+  );
+}
+
+.quick-icon {
+  margin-bottom: 24px;
+}
+
+.quick-icon .material-symbols-rounded {
+  font-size: 26px;
+  opacity: 0.9;
+}
+
+.quick-content strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.quick-content small {
+  display: block;
+  font-size: 10px;
+  opacity: 0.8;
+}
+
+
+/* =========================================================
+   INFORMASI TAMBAHAN
+   ========================================================= */
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.summary-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.summary-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  flex: 0 0 40px;
+}
+
+.summary-icon .material-symbols-rounded {
+  font-size: 20px;
+}
+
+.bg-light-blue {
+  background: #e8f4ff;
+}
+
+.color-blue {
+  color: #2196f3;
+}
+
+.bg-light-green {
+  background: #e8f8f5;
+}
+
+.color-green {
+  color: #00b09b;
+}
+
+.summary-content {
+  min-width: 0;
+}
+
+.summary-content small {
+  display: block;
+  color: #8b97a8;
+  font-size: 10px;
+}
+
+.summary-content strong {
+  display: block;
+  color: #1a2233;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+
+/* =========================================================
+   TRANSAKSI TERBARU & SHIFT STATUS
+   ========================================================= */
+
+.recent-list,
+.shift-card {
+  background: transparent;
+}
+
+.transaction-item,
+.shift-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+}
+
+.transaction-icon,
+.shift-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  flex: 0 0 44px;
+  border-radius: 14px;
+  background: #e8f4ff;
+  color: #3291ff;
+}
+
+.bg-light-purple {
+  background: #f3ebff;
+}
+
+.color-purple {
+  color: #9c27b0;
+}
+
+.transaction-info,
+.shift-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.transaction-info strong,
+.shift-content strong {
+  display: block;
+  font-size: 13px;
+  color: #1a2233;
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.transaction-info small,
+.shift-content small {
+  color: #8b97a8;
+  font-size: 11px;
+}
+
+.transaction-value {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #1c2536;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+  background: #fff;
+  border-radius: 18px;
+  text-align: center;
+}
+
+.empty-icon {
+  font-size: 40px;
+  color: var(--line);
+  margin-bottom: 10px;
+}
+
+.empty-state strong {
+  font-size: 13px;
+  color: #1a2233;
+  display: block;
+}
+
+.empty-state span {
+  font-size: 11px;
+  color: #8b97a8;
+}
+
+
+/* =========================================================
+   STATUS SHIFT
+   ========================================================= */
+
+.shift-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background: #e8f8f5;
+  color: #00b09b;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.shift-status i {
+  width: 6px;
+  height: 6px;
+  background: #00b09b;
+  border-radius: 50%;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .dashboard-header {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .balance-scroll-container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .balance-card {
+    flex-basis: 90%;
+    padding: 20px;
+  }
+
+  .balance-card strong {
+    font-size: 28px;
+  }
+
+  .section {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .summary-grid {
+    gap: 8px;
+  }
+
+  .summary-card {
+    padding: 12px;
+    gap: 9px;
+  }
+
+  .summary-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+  }
+}
+
+
+/* =========================================================
+   TABLET / DESKTOP
+   ========================================================= */
+
+@media (min-width: 640px) {
+
+  .dashboard-header {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .balance-scroll-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .section {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .balance-card {
+    flex-basis: 70%;
+  }
+}

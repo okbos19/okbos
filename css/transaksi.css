@@ -1,0 +1,529 @@
+/* CSS khusus modul */
+:root{
+    --transaksi-page:#f2f7fd;
+    --transaksi-text:#1a2233;
+    --transaksi-blue:#3291ff;
+    --transaksi-line:#eef2f6;
+}
+
+html.transaksi-page,
+body.transaksi-page{
+    margin:0;
+    padding:0;
+    background:var(--transaksi-page);
+    color:var(--transaksi-text);
+    -webkit-font-smoothing:antialiased;
+}
+
+
+/* =========================================================
+   APP SHELL TRANSAKSI
+   ========================================================= */
+
+.transaksi-shell{
+    width:100%;
+    max-width:760px;
+    min-height:100vh;
+    margin:0 auto;
+    padding:0 0 110px;
+    background:var(--transaksi-page);
+    position:relative;
+    box-shadow:0 0 40px rgba(0,0,0,.03);
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.transaksi-shell .top-bg-wrapper-mini{
+    width:100%;
+    margin:0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #4da3ff 0%,
+            #308ff8 100%
+        );
+
+    border-bottom-left-radius:30px;
+    border-bottom-right-radius:30px;
+
+    padding:
+        max(25px,env(safe-area-inset-top))
+        20px
+        50px;
+
+    color:#fff;
+
+    box-shadow:
+        0 15px 30px rgba(48,143,248,.15);
+}
+
+
+/* =========================================================
+   PAGE HEADER
+   ========================================================= */
+
+.transaksi-shell .page-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.transaksi-shell .page-header h1{
+    margin:0;
+
+    font-family:Montserrat,Poppins,sans-serif;
+
+    font-size:22px;
+    line-height:1.2;
+
+    font-weight:700;
+
+    letter-spacing:-.02em;
+
+    color:#fff !important;
+}
+
+
+/* =========================================================
+   FILTER BUTTON
+   ========================================================= */
+
+.transaksi-shell .icon-button{
+    width:40px;
+    height:40px;
+
+    display:grid;
+    place-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.20);
+    color:#fff;
+
+    text-decoration:none;
+
+    border:1px solid rgba(255,255,255,.30);
+
+    transition:
+        background .2s ease,
+        transform .2s ease;
+
+    cursor:pointer;
+}
+
+.transaksi-shell .icon-button:active{
+    background:rgba(255,255,255,.30);
+    transform:scale(.96);
+}
+
+.transaksi-shell .icon-button .material-symbols-rounded{
+    font-size:22px;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.transaksi-shell .page-content{
+    padding:0 20px;
+
+    margin-top:-30px;
+
+    position:relative;
+
+    z-index:10;
+}
+
+
+/* =========================================================
+   QUICK ADD
+   ========================================================= */
+
+.transaksi-shell .btn-quick-add{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    width:100%;
+
+    padding:16px;
+
+    background:#fff;
+
+    color:var(--transaksi-blue);
+
+    font-family:Montserrat,Poppins,sans-serif;
+
+    font-size:14px;
+    font-weight:700;
+
+    text-decoration:none;
+
+    border-radius:20px;
+
+    box-shadow:
+        0 8px 25px rgba(50,145,255,.15);
+
+    border:
+        1px solid rgba(50,145,255,.10);
+
+    margin-bottom:25px;
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.transaksi-shell .btn-quick-add:active{
+    transform:scale(.98);
+
+    box-shadow:
+        0 4px 15px rgba(50,145,255,.10);
+}
+
+.transaksi-shell .btn-quick-add .material-symbols-rounded{
+    font-size:24px;
+}
+
+
+/* =========================================================
+   SECTION LABEL
+   ========================================================= */
+
+.transaksi-shell .section-label{
+    display:block;
+
+    font-size:11px;
+    line-height:1.4;
+
+    font-weight:700;
+
+    color:#9aa5b6;
+
+    text-transform:uppercase;
+
+    letter-spacing:.05em;
+
+    margin-bottom:12px;
+}
+
+
+/* =========================================================
+   TRANSACTION LIST
+   ========================================================= */
+
+.transaksi-shell .recent-list{
+    background:transparent;
+}
+
+
+/* =========================================================
+   TRANSACTION ITEM
+   ========================================================= */
+
+.transaksi-shell .transaction-item{
+    display:flex;
+    align-items:center;
+
+    gap:14px;
+
+    padding:14px 16px;
+
+    margin-bottom:12px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.02);
+}
+
+
+/* =========================================================
+   TRANSACTION ICON
+   ========================================================= */
+
+.transaksi-shell .transaction-icon{
+    width:44px;
+    height:44px;
+
+    display:grid;
+    place-items:center;
+
+    flex:0 0 44px;
+
+    border-radius:14px;
+
+    background:#e8f4ff;
+
+    color:var(--transaksi-blue);
+}
+
+
+/* =========================================================
+   TRANSACTION INFO
+   ========================================================= */
+
+.transaksi-shell .transaction-info{
+    flex:1;
+    min-width:0;
+}
+
+.transaksi-shell .transaction-info strong{
+    display:block;
+
+    font-size:13px;
+
+    color:#1a2233;
+
+    margin-bottom:2px;
+}
+
+.transaksi-shell .transaction-info small{
+    color:#8b97a8;
+    font-size:11px;
+}
+
+
+/* =========================================================
+   TRANSACTION VALUE
+   ========================================================= */
+
+.transaksi-shell .transaction-value{
+    font-family:Montserrat,Poppins,sans-serif;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:#1c2536;
+
+    white-space:nowrap;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.transaksi-shell .empty-state{
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    padding:40px 20px;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    text-align:center;
+}
+
+.transaksi-shell .empty-icon{
+    font-size:44px;
+
+    color:#eef2f6;
+
+    margin-bottom:12px;
+}
+
+
+/* =========================================================
+   FILTER
+   ========================================================= */
+
+#transactionFilter{
+    position:fixed;
+    inset:0;
+
+    z-index:999;
+
+    pointer-events:none;
+
+    opacity:0;
+
+    transition:opacity .2s ease;
+}
+
+#transactionFilter.show{
+    opacity:1;
+    pointer-events:auto;
+}
+
+.filter-backdrop{
+    position:absolute;
+    inset:0;
+
+    background:rgba(15,23,42,.35);
+
+    backdrop-filter:blur(3px);
+}
+
+.filter-sheet{
+    position:absolute;
+
+    left:50%;
+    bottom:0;
+
+    width:min(100%,760px);
+
+    transform:translate(-50%,100%);
+
+    background:#fff;
+
+    border-radius:24px 24px 0 0;
+
+    padding:20px;
+
+    box-shadow:
+        0 -15px 40px rgba(0,0,0,.15);
+
+    transition:
+        transform .25s ease;
+}
+
+#transactionFilter.show .filter-sheet{
+    transform:translate(-50%,0);
+}
+
+.filter-head{
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    margin-bottom:14px;
+}
+
+.filter-head strong{
+    font-family:Montserrat,Poppins,sans-serif;
+
+    font-size:16px;
+
+    color:#1a2233;
+}
+
+.filter-close{
+    width:36px;
+    height:36px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#f3f6fa;
+
+    color:#687386;
+
+    display:grid;
+    place-items:center;
+
+    cursor:pointer;
+}
+
+.filter-option{
+    width:100%;
+
+    border:0;
+
+    background:#f7f9fc;
+
+    border-radius:14px;
+
+    padding:14px;
+
+    margin-top:8px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    color:#1a2233;
+
+    font-family:Poppins,sans-serif;
+
+    font-size:13px;
+
+    cursor:pointer;
+
+    text-align:left;
+}
+
+.filter-option > span{
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+}
+
+.filter-option .material-symbols-rounded{
+    font-size:21px;
+
+    color:var(--transaksi-blue);
+}
+
+.filter-option:active{
+    transform:scale(.98);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(min-width:640px){
+
+    .transaksi-shell .page-content{
+        padding-left:40px;
+        padding-right:40px;
+    }
+
+    .transaksi-shell .top-bg-wrapper-mini{
+        padding:
+            30px
+            40px
+            50px;
+    }
+}
+
+
+/* =========================================================
+   SMALL PHONE
+   ========================================================= */
+
+@media(max-width:380px){
+
+    .transaksi-shell .top-bg-wrapper-mini{
+        padding-left:16px;
+        padding-right:16px;
+    }
+
+    .transaksi-shell .page-content{
+        padding-left:16px;
+        padding-right:16px;
+    }
+
+    .transaksi-shell .page-header h1{
+        font-size:21px;
+    }
+}

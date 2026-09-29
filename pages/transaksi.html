@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Transaksi — OKBOS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,0,0" rel="stylesheet">
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/transaksi.css">
+</head>
+
+<body class="transaksi-page">
+
+<main class="transaksi-shell">
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+  <div class="top-bg-wrapper-mini">
+
+    <header class="page-header">
+
+      <h1>Transaksi</h1>
+
+      <button
+        class="icon-button"
+        type="button"
+        aria-label="Filter"
+      >
+        <span class="material-symbols-rounded">
+          filter_list
+        </span>
+      </button>
+
+    </header>
+
+  </div>
+
+
+  <!-- =====================================================
+       CONTENT
+       ===================================================== -->
+  <section class="page-content">
+
+    <!-- INPUT TRANSAKSI BARU -->
+    <a
+      href="./transaksi-baru.html"
+      class="btn-quick-add"
+    >
+      <span class="material-symbols-rounded">
+        add_circle
+      </span>
+
+      Input Transaksi Baru
+    </a>
+
+
+    <!-- LABEL -->
+    <span class="section-label">
+      Riwayat Semua Transaksi
+    </span>
+
+
+    <!-- ===================================================
+         TRANSACTION LIST
+         ID INI TETAP DIPERTAHANKAN UNTUK transaksi.js
+         =================================================== -->
+    <div
+      id="transactionList"
+      class="recent-list"
+    >
+
+      <div class="empty-state">
+
+        <span class="empty-icon material-symbols-rounded">
+          receipt_long
+        </span>
+
+        <strong style="font-size:13px;color:#1a2233;">
+          Memuat transaksi...
+        </strong>
+
+        <span style="font-size:11px;color:#8b97a8;">
+          Mohon tunggu sebentar
+        </span>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- =======================================================
+     GLOBAL BOTTOM NAV
+     DIISI OTOMATIS OLEH app.js
+     ======================================================= -->
+
+<nav
+  id="bottomNav"
+  class="bottom-nav"
+  aria-label="Navigasi utama"
+></nav>
+
+
+<!-- =======================================================
+     MORE MENU
+     DIISI OTOMATIS OLEH app.js
+     ======================================================= -->
+
+<div
+  id="moreMenu"
+  class="more-menu"
+></div>
+
+
+<!-- =======================================================
+     SUPABASE
+     ======================================================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<!-- =======================================================
+     TRANSAKSI JS
+     WAJIB MODULE
+     ======================================================= -->
+
+<script
+  type="module"
+  src="../js/transaksi.js"
+></script>
+
+</body>
+</html>

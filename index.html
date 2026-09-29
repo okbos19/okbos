@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Dashboard — OKBOS</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,500,0,0" rel="stylesheet">
+
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/dashboard.css">
+</head>
+
+<body>
+
+<main class="app-shell dashboard-shell">
+
+  <!-- =====================================================
+       TOP BACKGROUND WRAPPER
+       ===================================================== -->
+  <div class="top-bg-wrapper">
+
+    <!-- HEADER -->
+    <header class="dashboard-header">
+      <div class="welcome-copy">
+        <span class="welcome-title">Welcome Back,</span>
+        <strong id="welcomeText">Memuat...</strong>
+      </div>
+
+      <div class="header-actions">
+        <!-- NOTIFICATION -->
+        <button class="header-button notification-button" type="button" aria-label="Notifikasi">
+          <span class="material-symbols-rounded">notifications</span>
+          <i></i>
+        </button>
+
+        <!-- AVATAR -->
+        <button class="avatar-button" type="button" aria-label="Profil">
+          <span class="material-symbols-rounded">person</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- BALANCE SLIDER -->
+    <section class="balance-slider-section">
+      <div class="balance-scroll-container">
+        
+        <!-- 1. SALDO TOTAL -->
+        <div class="balance-card">
+          <div class="balance-decoration balance-decoration-one"></div>
+          <div class="balance-decoration balance-decoration-two"></div>
+          <div class="balance-top">
+            <span>Saldo Total</span>
+            <span class="material-symbols-rounded">account_balance_wallet</span>
+          </div>
+          <div class="balance-label">SEMUA ASET</div>
+          <strong id="totalBalance">Rp 0</strong>
+          <div class="balance-bottom">
+            <div class="badge-growth">Akumulasi seluruh saldo</div>
+          </div>
+        </div>
+
+        <!-- 2. SALDO BANK -->
+        <div class="balance-card">
+          <div class="balance-decoration balance-decoration-one"></div>
+          <div class="balance-decoration balance-decoration-two"></div>
+          <div class="balance-top">
+            <span>Saldo Bank</span>
+            <span class="material-symbols-rounded">account_balance</span>
+          </div>
+          <div class="balance-label">REKENING AKTIF</div>
+          <strong id="bankBalance">Rp 0</strong>
+          <div class="balance-bottom">
+            <div class="badge-growth">Saldo di rekening bank</div>
+          </div>
+        </div>
+
+        <!-- 3. SALDO CASH -->
+        <div class="balance-card">
+          <div class="balance-decoration balance-decoration-one"></div>
+          <div class="balance-decoration balance-decoration-two"></div>
+          <div class="balance-top">
+            <span>Saldo Kas</span>
+            <span class="material-symbols-rounded">payments</span>
+          </div>
+          <div class="balance-label">KAS OUTLET</div>
+          <strong id="cashBalance">Rp 0</strong>
+          <div class="balance-bottom">
+            <div class="badge-growth">Uang tunai di laci</div>
+          </div>
+        </div>
+
+        <!-- 4. TOTAL TRANSAKSI -->
+        <div class="balance-card">
+          <div class="balance-decoration balance-decoration-one"></div>
+          <div class="balance-decoration balance-decoration-two"></div>
+          <div class="balance-top">
+            <span>Total Transaksi</span>
+            <span class="material-symbols-rounded">receipt_long</span>
+          </div>
+          <div class="balance-label">HARI INI</div>
+          <strong id="totalTransactions">0</strong>
+          <div class="balance-bottom">
+            <div class="badge-growth">Jumlah transaksi hari ini</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div> <!-- End Top BG Wrapper -->
+
+
+  <!-- =====================================================
+       AKSES CEPAT 
+       ===================================================== -->
+  <section class="section quick-section">
+    <div class="section-title">
+      <div>
+        <span class="section-label">Layanan</span>
+        <h2>Akses Cepat</h2>
+      </div>
+      <a href="./pages/transaksi.html">Semua</a>
+    </div>
+
+    <div class="quick-scroll">
+      <!-- TARIK TUNAI -->
+      <a class="quick-card bg-purple" href="./pages/transaksi-baru.html?type=CASH_WITHDRAWAL">
+        <span class="quick-icon"><span class="material-symbols-rounded">payments</span></span>
+        <span class="quick-content">
+          <strong>Tarik Tunai</strong>
+          <small>Ambil uang tunai</small>
+        </span>
+      </a>
+
+      <!-- SETOR TUNAI -->
+      <a class="quick-card bg-orange" href="./pages/transaksi-baru.html?type=CASH_DEPOSIT">
+        <span class="quick-icon"><span class="material-symbols-rounded">savings</span></span>
+        <span class="quick-content">
+          <strong>Setor Tunai</strong>
+          <small>Tambah saldo kas</small>
+        </span>
+      </a>
+
+      <!-- TRANSFER -->
+      <a class="quick-card bg-blue" href="./pages/transaksi-baru.html?type=BANK_TRANSFER">
+        <span class="quick-icon"><span class="material-symbols-rounded">swap_horiz</span></span>
+        <span class="quick-content">
+          <strong>Transfer</strong>
+          <small>Kirim uang</small>
+        </span>
+      </a>
+
+      <!-- PULSA -->
+      <a class="quick-card bg-cyan" href="./pages/transaksi-baru.html?type=PULSA">
+        <span class="quick-icon"><span class="material-symbols-rounded">phone_iphone</span></span>
+        <span class="quick-content">
+          <strong>Pulsa</strong>
+          <small>Isi pulsa</small>
+        </span>
+      </a>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       INFORMASI TAMBAHAN
+       ===================================================== -->
+  <section class="section summary-section">
+    <div class="summary-grid">
+      <!-- PENJUALAN -->
+      <div class="summary-card">
+        <span class="summary-icon bg-light-blue color-blue">
+          <span class="material-symbols-rounded">point_of_sale</span>
+        </span>
+        <span class="summary-content">
+          <small>Penjualan Hari Ini</small>
+          <strong id="todaySales">Rp 0</strong>
+        </span>
+      </div>
+
+      <!-- PROFIT -->
+      <div class="summary-card">
+        <span class="summary-icon bg-light-green color-green">
+          <span class="material-symbols-rounded">trending_up</span>
+        </span>
+        <span class="summary-content">
+          <small>Profit Hari Ini</small>
+          <strong id="todayProfit">Rp 0</strong>
+        </span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       TRANSAKSI TERBARU 
+       ===================================================== -->
+  <section class="section recent-section">
+    <div class="section-title">
+      <div>
+        <span class="section-label">Aktivitas</span>
+        <h2>Transaksi Terbaru</h2>
+      </div>
+      <a href="./pages/transaksi.html">Lihat semua</a>
+    </div>
+
+    <!-- Container Transaksi -->
+    <div id="recentTransactions" class="recent-list">
+      <div class="empty-state">
+        <span class="empty-icon material-symbols-rounded">receipt_long</span>
+        <strong>Belum ada transaksi</strong>
+        <span>Transaksi terbaru akan tampil di sini.</span>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =====================================================
+       STATUS SHIFT
+       ===================================================== -->
+  <section class="section shift-section">
+    <div class="shift-card">
+      <div class="shift-icon bg-light-purple color-purple">
+        <span class="material-symbols-rounded">schedule</span>
+      </div>
+      <div class="shift-content">
+        <small>Status Shift</small>
+        <strong id="shiftStatus">-</strong>
+      </div>
+      <span class="shift-status">
+        <i></i> Aktif
+      </span>
+    </div>
+  </section>
+
+</main>
+
+
+<!-- =====================================================
+     BOTTOM NAV & MENU
+     ===================================================== -->
+<nav id="bottomNav" class="bottom-nav"></nav>
+<div id="moreMenu" class="more-menu"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script type="module" src="./js/dashboard.js"></script>
+
+</body>
+</html>
